@@ -1,0 +1,12 @@
+{
+  "name": "bundle",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "flutter packages pub run build_runner build --delete-conflicting-outputs",
+    "build:watch": "flutter packages pub run build_runner watch --delete-conflicting-outputs",
+    "analyze": "flutter analyze",
+    "test": "flutter test --coverage"
+  }
+}
