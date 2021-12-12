@@ -27,18 +27,28 @@ class AlbumRepository implements IAlbumRepository {
     print('CREATE A NEW ALBUM');
     _albumList = _albumList.plusElement(album);
     _albumStreamController.add(right(_albumList));
+    await Future.delayed(const Duration(seconds: 1));
     return right(unit);
   }
 
   @override
   Future<Either<AlbumFailure, Unit>> delete(Album album) async {
     print('DELETE AN ALBUM');
+    _albumList = _albumList.minusElement(album);
+    _albumStreamController.add(right(_albumList));
     return right(unit);
   }
 
   @override
   Future<Either<AlbumFailure, Unit>> update(Album album) async {
     print('UPDATE AN ALBUM');
+    _albumList = _albumList.map((a) {
+      if (a.id.getOrCrash() == album.id.getOrCrash()) {
+        return album;
+      }
+      return a;
+    });
+    _albumStreamController.add(right(_albumList));
     return right(unit);
   }
 

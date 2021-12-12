@@ -2,7 +2,6 @@ import 'package:bundle/application/albums/album_form/album_form_cubit.dart';
 import 'package:bundle/domain/albums/value_objects.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
@@ -11,14 +10,22 @@ class TitleField extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textEditingController = useTextEditingController();
+    final textEditingController = useTextEditingController(
+      text: context
+          .read<AlbumFormCubit>()
+          .state
+          .album
+          .title
+          .value
+          .fold((f) => '', (r) => r),
+    );
 
     return BlocConsumer<AlbumFormCubit, AlbumFormState>(
       listenWhen: (previous, current) =>
           previous.isEditing != current.isEditing,
-      listener: (context, state) => {
+      listener: (context, state) {
         // In case of an initial data failure... we can't get to this point though.
-        textEditingController.text = state.album.title.getOrCrash()
+        textEditingController.text = state.album.title.getOrCrash();
       },
       buildWhen: (previous, current) =>
           previous.album.title != current.album.title,

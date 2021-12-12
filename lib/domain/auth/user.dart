@@ -9,7 +9,7 @@ import 'value_objects.dart';
 part 'user.freezed.dart';
 
 @freezed
-abstract class User with _$User implements IEntity {
+class User with _$User implements IEntity {
   const factory User({
     required UniqueId id,
     required StringSingleLine name,
