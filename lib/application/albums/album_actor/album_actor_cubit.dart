@@ -12,7 +12,8 @@ part 'album_actor_cubit.freezed.dart';
 class AlbumActorCubit extends Cubit<AlbumActorState> {
   final IAlbumRepository _albumRepository;
 
-  AlbumActorCubit(this._albumRepository) : super(AlbumActorState.initial());
+  AlbumActorCubit(this._albumRepository)
+      : super(const AlbumActorState.initial());
 
   void deleteAlbum(Album album) async {
     emit(const AlbumActorState.actionInProgress());

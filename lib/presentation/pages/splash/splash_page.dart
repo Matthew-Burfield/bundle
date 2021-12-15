@@ -14,17 +14,17 @@ class SplashPage extends StatelessWidget {
     return BlocListener<AuthBloc, AuthState>(
       listener: (context, state) {
         state.map(
-          initial: (_) {},
-          authenticated: (_) {
-            print('waiting...');
-            Timer(const Duration(seconds: 2), () {
-              print('redirect!');
-              AutoRouter.of(context).replace(const AppRootRoute());
-            });
-          },
-          unauthenticated: (_) =>
-              AutoRouter.of(context).replace(const SignInRoute()),
-        );
+            initial: (_) {},
+            authenticated: (_) {
+              print('waiting...');
+              Timer(const Duration(seconds: 2), () {
+                print('redirect!');
+                AutoRouter.of(context).replace(const HomeRoute());
+              });
+            },
+            unauthenticated: (_) {}
+            // AutoRouter.of(context).replace(const SignInRoute()),
+            );
       },
       child: const Scaffold(
         body: Center(

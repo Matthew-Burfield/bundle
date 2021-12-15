@@ -44,6 +44,7 @@ dependencies:
   flutter_hooks: ^0.18.1
   image_picker: ^0.8.4+4
   video_player: ^2.2.7
+  mockito: ^5.0.16
 
 dev_dependencies:
   flutter_test:
