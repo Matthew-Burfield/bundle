@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:bundle/presentation/routes/app_router.gr.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +45,10 @@ class HomePage extends HookWidget {
           showSelectedLabels: false,
           showUnselectedLabels: false,
           currentIndex: tabsRouter.activeIndex,
-          onTap: tabsRouter.setActiveIndex,
+          onTap: (index) {
+            prevRouterIndex.value = tabsRouter.activeIndex;
+            tabsRouter.setActiveIndex(index);
+          },
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home_outlined),
