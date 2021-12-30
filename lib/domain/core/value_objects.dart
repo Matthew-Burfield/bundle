@@ -4,7 +4,7 @@ import 'package:uuid/uuid.dart';
 
 import 'common_interfaces.dart';
 import 'errors.dart';
-import 'failures.dart';
+import 'value_failures.dart';
 import 'value_validators.dart';
 
 @immutable

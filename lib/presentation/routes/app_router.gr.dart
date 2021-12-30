@@ -13,7 +13,7 @@ import 'package:flutter/material.dart' as _i11;
 
 import '../pages/album/album_page.dart' as _i7;
 import '../pages/home/home_page.dart' as _i3;
-import '../pages/image_upload/images_overview/image_upload_page.dart' as _i8;
+import '../pages/image_upload/image_upload_wrapper_page.dart' as _i8;
 import '../pages/profile/pages/setting_one_page.dart' as _i4;
 import '../pages/profile/pages/setting_three_page.dart' as _i6;
 import '../pages/profile/pages/setting_two_page.dart' as _i5;
@@ -63,7 +63,7 @@ class AppRouter extends _i10.RootStackRouter {
     },
     ImageUploadRoute.name: (routeData) {
       return _i10.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i8.ImageUploadPage());
+          routeData: routeData, child: const _i8.ImageUploadWrapperPage());
     },
     ProfileRoute.name: (routeData) {
       return _i10.MaterialPageX<dynamic>(
@@ -79,7 +79,7 @@ class AppRouter extends _i10.RootStackRouter {
           _i10.RouteConfig(AlbumRoute.name,
               path: 'album-page', parent: HomeRoute.name),
           _i10.RouteConfig(ImageUploadRoute.name,
-              path: 'image-upload-page', parent: HomeRoute.name),
+              path: 'image-upload-wrapper-page', parent: HomeRoute.name),
           _i10.RouteConfig(ProfileRoute.name,
               path: 'profile-page', parent: HomeRoute.name)
         ]),
@@ -89,66 +89,79 @@ class AppRouter extends _i10.RootStackRouter {
       ];
 }
 
-/// generated route for [_i1.SplashPage]
+/// generated route for
+/// [_i1.SplashPage]
 class SplashRoute extends _i10.PageRouteInfo<void> {
-  const SplashRoute() : super(name, path: '/');
+  const SplashRoute() : super(SplashRoute.name, path: '/');
 
   static const String name = 'SplashRoute';
 }
 
-/// generated route for [_i2.SignInPage]
+/// generated route for
+/// [_i2.SignInPage]
 class SignInRoute extends _i10.PageRouteInfo<void> {
-  const SignInRoute() : super(name, path: '/sign-in-page');
+  const SignInRoute() : super(SignInRoute.name, path: '/sign-in-page');
 
   static const String name = 'SignInRoute';
 }
 
-/// generated route for [_i3.HomePage]
+/// generated route for
+/// [_i3.HomePage]
 class HomeRoute extends _i10.PageRouteInfo<void> {
   const HomeRoute({List<_i10.PageRouteInfo>? children})
-      : super(name, path: '/', initialChildren: children);
+      : super(HomeRoute.name, path: '/', initialChildren: children);
 
   static const String name = 'HomeRoute';
 }
 
-/// generated route for [_i4.SettingsOnePage]
+/// generated route for
+/// [_i4.SettingsOnePage]
 class SettingsOneRoute extends _i10.PageRouteInfo<void> {
-  const SettingsOneRoute() : super(name, path: '/settings-one-page');
+  const SettingsOneRoute()
+      : super(SettingsOneRoute.name, path: '/settings-one-page');
 
   static const String name = 'SettingsOneRoute';
 }
 
-/// generated route for [_i5.SettingsTwoPage]
+/// generated route for
+/// [_i5.SettingsTwoPage]
 class SettingsTwoRoute extends _i10.PageRouteInfo<void> {
-  const SettingsTwoRoute() : super(name, path: '/settings-two-page');
+  const SettingsTwoRoute()
+      : super(SettingsTwoRoute.name, path: '/settings-two-page');
 
   static const String name = 'SettingsTwoRoute';
 }
 
-/// generated route for [_i6.SettingsThreePage]
+/// generated route for
+/// [_i6.SettingsThreePage]
 class SettingsThreeRoute extends _i10.PageRouteInfo<void> {
-  const SettingsThreeRoute() : super(name, path: '/settings-three-page');
+  const SettingsThreeRoute()
+      : super(SettingsThreeRoute.name, path: '/settings-three-page');
 
   static const String name = 'SettingsThreeRoute';
 }
 
-/// generated route for [_i7.AlbumPage]
+/// generated route for
+/// [_i7.AlbumPage]
 class AlbumRoute extends _i10.PageRouteInfo<void> {
-  const AlbumRoute() : super(name, path: 'album-page');
+  const AlbumRoute() : super(AlbumRoute.name, path: 'album-page');
 
   static const String name = 'AlbumRoute';
 }
 
-/// generated route for [_i8.ImageUploadPage]
+/// generated route for
+/// [_i8.ImageUploadWrapperPage]
 class ImageUploadRoute extends _i10.PageRouteInfo<void> {
-  const ImageUploadRoute() : super(name, path: 'image-upload-page');
+  const ImageUploadRoute()
+      : super(ImageUploadRoute.name, path: 'image-upload-wrapper-page');
 
   static const String name = 'ImageUploadRoute';
 }
 
-/// generated route for [_i9.ProfilePage]
+/// generated route for
+/// [_i9.ProfilePage]
 class ProfileRoute extends _i10.PageRouteInfo<void> {
-  const ProfileRoute() : super(name, path: 'profile-page');
+  const ProfileRoute() : super(ProfileRoute.name, path: 'profile-page');
 
   static const String name = 'ProfileRoute';
 }

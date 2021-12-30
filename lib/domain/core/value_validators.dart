@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:kt_dart/collection.dart';
 
-import 'failures.dart';
+import 'value_failures.dart';
 
 Either<ValueFailure<String>, String> validateMaxStringLength(
   String input,

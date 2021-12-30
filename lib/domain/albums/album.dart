@@ -1,5 +1,5 @@
 import 'package:bundle/domain/albums/value_objects.dart';
-import 'package:bundle/domain/core/failures.dart';
+import 'package:bundle/domain/core/value_failures.dart';
 import 'package:bundle/domain/core/value_objects.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
